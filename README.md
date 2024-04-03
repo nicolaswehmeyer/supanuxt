@@ -20,7 +20,7 @@ Initially make sure to setup your Supabase instance accordingly:
 
 Within Supabase, create a new profiles table, enable row level security, create a new policy and a new bucket to store users profile photos. 
 
-*To do this, simply paste the following lines into the SQL editor within your Supabase project and you're done:*
+**To do this, simply paste the following lines into the SQL editor within your Supabase project and you're done:**
 ```sql
 -- Create a new profiles table to store users profile details
 create table public.profiles (
