@@ -24,7 +24,8 @@ Initially make sure to setup your Supabase instance accordingly:
 Within Supabase, create a new profiles table, enable row level security, create a new policy and a new bucket to store users profile photos. 
 
 *To do this, simply paste the following lines into the SQL editor within your Supabase project and you're done:*
-```
+```sql
+-- Create a new profiles table to store users profile details
 create table public.profiles (
   id uuid primary key references auth.users (id),
   created_at timestamp with time zone default now() not null,
@@ -38,14 +39,17 @@ create table public.profiles (
   photo text
 );
 
+-- Enable Row-Level-Security policies
 alter table public.profiles enable row level security;
 
+-- Create a new RLS policy enabling authenticated users to CRUD their profiles
 create policy "Allow authenticated users to CRUD their own profiles"
   on "public"."profiles" as permissive
   for all
   to authenticated
   using ((auth.uid() = id)) with check ((auth.uid() = id));
 
+-- Create a new public storage bucket to store users profile photos
 insert into storage.buckets
   (id, name, public, file_size_limit)
 values
