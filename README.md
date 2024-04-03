@@ -31,7 +31,7 @@ Now setup your Supabase instance:
 - Rename the ```.env.example``` file to ```.env```
 - Copy your Supabase URL and API-KEY into the ```.env``` file accordingly
 
-# Setup your users profiles table to enable managing your users details
+Setup your users profiles table to enable managing your users details:
 ```CREATE TABLE public.profiles (
   id uuid,
   created_at timestamptz,
@@ -45,7 +45,7 @@ Now setup your Supabase instance:
   photo text
 );```
 
-# Now go ahead and enable Row-Level-Security Policies and paste the following code into the Supabase SQL editor
+Now go ahead and enable Row-Level-Security Policies and paste the following code into the Supabase SQL editor
 ```create policy "Allow authenticated users to CRUD their own profiles" on "public"."profiles" as permissive for all to authenticated using ((auth.uid() = id))with check ((auth.uid() = id));```
 
 ## Development Server
