@@ -53,8 +53,11 @@ values
   ('avatars', 'avatars', true, 5242880);
 ```
 
-*Finally, make sure to install all required dependencies within your projects folder within your terminal:*
+**Finally, make sure to install all required dependencies within your projects folder within your terminal:**
 ```bash
+# Clone the repository and change directories
+git clone https://github.com/nicolaswehmeyer/nuxtabase && cd nuxtabase
+
 # npm
 npm install
 
