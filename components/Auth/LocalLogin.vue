@@ -4,7 +4,7 @@ import { useAuthStore } from '@/stores/AuthStore'
 const authStore = useAuthStore()
 
 const email = ref('')
-const password = ref(null)
+const password = ref('')
 
 const inputIsInvalid = computed(() => {
   if (email.value.length < 5 || password.value.length < 6) {

@@ -20,21 +20,14 @@ export const useAuthStore = defineStore({
         this.appStore.setLoader(true)
         const { data, error } = await this.supabaseClient
           .from('profiles')
-          .select(`
-            firstname,
-            lastname,
-            username,
-            street,
-            postcode,
-            city,
-            country,
-            photo
-          `)
+          .select()
           .single()
         if (error) throw error
         this.userProfile = data
       } catch (error) {
         this.appStore.setError(error)
+      } finally {
+        this.appStore.setLoader(false)
       }
     },
     async signUp(email, password) {

@@ -53,7 +53,6 @@ const newEmailIsInvalid = computed(() => {
         block
         @click="authStore.updateEmail(newEmail)"
         :disabled="newEmailIsInvalid"
-        color="blue"
       >
         Update Email
       </v-btn>

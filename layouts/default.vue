@@ -1,10 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <v-app
-    id="DefaultLayout"
-  >
+  <v-app id="DefaultLayout">
     <v-main>
       <slot />
     </v-main>

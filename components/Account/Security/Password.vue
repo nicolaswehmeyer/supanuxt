@@ -59,7 +59,6 @@ const newPasswordIsInvalid = computed(() => {
         block
         :disabled="newPasswordIsInvalid"
         @click="authStore.updatePassword(newPassword)"
-        color="blue"
       >
         Update Password
       </v-btn>

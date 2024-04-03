@@ -9,32 +9,6 @@ watchEffect(async () => {
     await navigateTo("/home")
   }
 })
-
-useSeoMeta({
-  title: 'Vite Project - Login',
-  description: 'Login to your Vite Project account',
-  ogTitle: '[og:title]',
-  ogDescription: '[og:description]',
-  ogImage: '[og:image]',
-  ogUrl: '[og:url]',
-  twitterTitle: '[twitter:title]',
-  twitterDescription: '[twitter:description]',
-  twitterImage: '[twitter:image]',
-  twitterCard: 'summary'
-})
-
-useHead({
-  htmlAttrs: {
-    lang: 'en'
-  },
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicosn.png'
-    }
-  ]
-})
 </script>
 
 <template>

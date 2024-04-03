@@ -9,7 +9,6 @@ const authStore = useAuthStore()
     block
     variant="elevated"
     prepend-icon="mdi-facebook"
-    color="primary"
     @click="authStore.signInWithOAuth('facebook')"
   >
     FaceBook

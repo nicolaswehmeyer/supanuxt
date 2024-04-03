@@ -1,7 +1,9 @@
 <script setup>
 import { useAuthStore } from '@/stores/AuthStore'
+import { useAppStore } from '@/stores/AppStore'
 
 const authStore = useAuthStore()
+const appStore = useAppStore()
 const user = useSupabaseUser()
 
 const links = [
@@ -22,6 +24,7 @@ const links = [
 
 <template>
   <v-app-bar app density="comfortable" border elevation="0">
+    <v-app-bar-nav-icon @click="appStore.switchNavRail"> </v-app-bar-nav-icon>
     <v-app-bar-title style="text-transform: capitalize">{{
       $route.name
     }}</v-app-bar-title>
@@ -30,7 +33,9 @@ const links = [
         <v-btn icon v-bind="props">
           <v-avatar
             :icon="!authStore.userProfile.photo ? 'mdi-account' : ''"
-            :image="authStore.userProfile.photo ? authStore.userProfile.photo : ''"
+            :image="
+              authStore.userProfile.photo ? authStore.userProfile.photo : ''
+            "
           >
           </v-avatar>
         </v-btn>

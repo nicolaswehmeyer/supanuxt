@@ -6,6 +6,9 @@ export const useAppStore = defineStore({
   state: () => ({
     authStore: useAuthStore(),
     app: {
+      navDrawer: true,
+      navRail: false,
+      darkMode: true,
       error: false,
       errorMessage: false,
       success: false,
@@ -14,6 +17,15 @@ export const useAppStore = defineStore({
     }
   }),
   actions: {
+    switchDarkMode() {
+      this.app.darkMode = !this.app.darkMode
+    },
+    switchNavDrawer() {
+      this.app.navDrawer = !this.app.navDrawer
+    },
+    switchNavRail() {
+      this.app.navRail = !this.app.navRail
+    },
     setLoader(value) {
       this.app.loading = value
     },

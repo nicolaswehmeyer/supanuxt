@@ -1,8 +1,12 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useAuthStore } from '@/stores/AuthStore'
+import { useAppStore } from '@/stores/AppStore'
 
 const authStore = useAuthStore()
+const appStore = useAppStore()
+
+const { app } = storeToRefs(useAppStore())
 
 const links = [
   { icon: 'mdi-home', title: 'Home', url: '/home' }
@@ -11,7 +15,9 @@ const links = [
 
 <template>
   <v-navigation-drawer
-    rail
+    color="background"
+    v-model="app.navDrawer"
+    :rail="app.navRail"
     location="left"
     app
   >
@@ -20,15 +26,7 @@ const links = [
       prepend-avatar="/img/logo.png"
       :title="authStore.userProfile.username"
       class="py-2"
-    >
-      <template v-slot:append>
-        <v-btn
-          on-hover
-          variant="text"
-          icon="mdi-chevron-left"
-        ></v-btn>
-      </template>
-    </v-list-item>
+    ></v-list-item>
 
     <v-list density="compact" nav>
       <v-list-item

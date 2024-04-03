@@ -9,7 +9,6 @@ const authStore = useAuthStore()
     block
     variant="elevated"
     prepend-icon="mdi-github"
-    color="primary"
     @click="authStore.signInWithOAuth('github')"
   >
     Github
