@@ -14,6 +14,14 @@ Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/
 - Vuetify
 - Supabase
 
+# Screenshots
+
+## Login
+![NuxtaBase Login Screen Image](login-screen.png)
+
+## Home
+![NuxtaBase Home Screen Image](home-screen.png)
+
 # Installation & Setup
 Initially make sure to setup your Supabase instance accordingly:
 - Login to https://supabase.com/
