@@ -1,11 +1,9 @@
 #  Nuxtabase - A Nuxt Supabase Starter Pack
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 This starter pack is using Vite, Nuxt 3, Pinia, Vuetify and Supabase and provides with all configurations required to get you started as fast as possible within your next project.
 
-## Technical Stack
+Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.
 
+## Technical Stack
 - Vite
 - Nuxt 3
 - Pinia
@@ -13,7 +11,6 @@ This starter pack is using Vite, Nuxt 3, Pinia, Vuetify and Supabase and provide
 - Supabase
 
 # Installation & Setup
-
 Initially make sure to setup your Supabase instance accordingly:
 - Login to https://supabase.com/
 - Create a new Supabase project or use an existing project of your choice
@@ -88,7 +85,6 @@ yarn build
 ```
 
 ## Locally preview production build:
-
 ```bash
 # npm
 npm run preview
@@ -96,5 +92,3 @@ npm run preview
 # yarn
 yarn preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
