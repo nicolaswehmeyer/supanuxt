@@ -45,8 +45,10 @@ Setup your users profiles table to enable managing your users details:
   photo text
 );```
 
+
 Now go ahead and enable Row-Level-Security Policies and paste the following code into the Supabase SQL editor
 ```create policy "Allow authenticated users to CRUD their own profiles" on "public"."profiles" as permissive for all to authenticated using ((auth.uid() = id))with check ((auth.uid() = id));```
+
 
 ## Development Server
 Start the development server on `http://localhost:3000`:
