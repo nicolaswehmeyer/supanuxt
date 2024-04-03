@@ -4,7 +4,7 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 This starter pack is using Vite, Nuxt 3, Pinia, Vuetify and Supabase and provides with all configurations required to get you started as fast as possible within your next project.
 
-# Technical Stack
+## Technical Stack
 
 - Vite
 - Nuxt 3
@@ -12,10 +12,47 @@ This starter pack is using Vite, Nuxt 3, Pinia, Vuetify and Supabase and provide
 - Vuetify
 - Supabase
 
-## Setup
+# Installation & Setup
 
-Make sure to install all dependencies first:
+Initially make sure to setup your Supabase instance accordingly:
+- Login to https://supabase.com/
+- Create a new Supabase project or use an existing project of your choice
+- If not done yet, setup your preferred auth providers (Email, Github, Facebook)
+- Rename the ```.env.example``` file to ```.env```
+- Insert your projects Supabase URL and API key into the ```.env``` file
 
+Within Supabase, create a new profiles table, enable row level security, create a new policy and a new bucket to store users profile photos. 
+
+*To do this, simply paste the following lines into the SQL editor within your Supabase project and you're done:*
+```
+create table public.profiles (
+  id uuid primary key references auth.users (id),
+  created_at timestamp with time zone default now() not null,
+  firstname text,
+  lastname text,
+  username text,
+  street text,
+  postcode bigint,
+  city text,
+  country text,
+  photo text
+);
+
+alter table public.profiles enable row level security;
+
+create policy "Allow authenticated users to CRUD their own profiles"
+  on "public"."profiles" as permissive
+  for all
+  to authenticated
+  using ((auth.uid() = id)) with check ((auth.uid() = id));
+
+insert into storage.buckets
+  (id, name, public, file_size_limit)
+values
+  ('avatars', 'avatars', true, 5242880);
+```
+
+*Finally, make sure to install all required dependencies within your projects folder within your terminal:*
 ```bash
 # npm
 npm install
@@ -23,34 +60,6 @@ npm install
 # yarn
 yarn install
 ```
-
-Now setup your Supabase instance:
-- Login to https://supabase.com/
-- Create a Supabase project
-- Setup your auth providers (Email, Github, Facebook) accordingly
-- Rename the ```.env.example``` file to ```.env```
-- Copy your Supabase URL and API-KEY into the ```.env``` file accordingly
-
-
-Setup your users profiles table to enable managing your users details:
-```
-CREATE TABLE public.profiles (
-  id uuid,
-  created_at timestamptz,
-  firstname text,
-  lastname text,
-  username text,
-  street text,
-  postcode int8,
-  city text,
-  country text,
-  photo text
-);
-```
-
-Now go ahead and enable Row-Level-Security Policies and paste the following code into the Supabase SQL editor:
-```create policy "Allow authenticated users to CRUD their own profiles" on "public"."profiles" as permissive for all to authenticated using ((auth.uid() = id))with check ((auth.uid() = id));```
-
 
 ## Development Server
 Start the development server on `http://localhost:3000`:
@@ -64,7 +73,6 @@ yarn dev
 ```
 
 ## Production
-
 Build the application for production:
 
 ```bash
@@ -75,7 +83,7 @@ npm run build
 yarn build
 ```
 
-Locally preview production build:
+## Locally preview production build:
 
 ```bash
 # npm
