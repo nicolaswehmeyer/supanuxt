@@ -55,43 +55,46 @@ values
 
 **Finally, make sure to install all required dependencies within your projects folder within your terminal:**
 ```bash
-# Clone the repository and change directories
-git clone https://github.com/nicolaswehmeyer/nuxtabase && cd nuxtabase
+# Clone the repository
+git clone https://github.com/nicolaswehmeyer/nuxtabase
 
-# npm
-npm install
+# Change directories
+cd nuxtabase
 
 # yarn
 yarn install
+
+# npm
+npm install
 ```
 
 ## Development Server
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
 # yarn
 yarn dev
+
+# npm
+npm run dev
 ```
 
 ## Production
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
 # yarn
 yarn build
+
+# npm
+npm run build
 ```
 
 ## Locally preview production build:
 ```bash
-# npm
-npm run preview
-
 # yarn
 yarn preview
+
+# npm
+npm run preview
 ```
