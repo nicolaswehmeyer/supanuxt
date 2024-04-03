@@ -1,6 +1,8 @@
 #  Nuxtabase - A Nuxt Supabase Starter Pack
 This starter pack is using Vite, Nuxt 3, Pinia, Vuetify and Supabase and provides with all configurations required to get you started as fast as possible within your next project.
 
+![NuxtaBase Header Image](image.png)
+
 Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.
 
 ## Technical Stack
