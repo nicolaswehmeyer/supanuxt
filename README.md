@@ -34,7 +34,8 @@ Now setup your Supabase instance:
 
 Setup your users profiles table to enable managing your users details:
 
-```CREATE TABLE public.profiles (
+```
+CREATE TABLE public.profiles (
   id uuid,
   created_at timestamptz,
   firstname text,
@@ -45,7 +46,8 @@ Setup your users profiles table to enable managing your users details:
   city text,
   country text,
   photo text
-);```
+);
+```
 
 
 Now go ahead and enable Row-Level-Security Policies and paste the following code into the Supabase SQL editor:
