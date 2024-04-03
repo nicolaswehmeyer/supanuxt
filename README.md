@@ -5,7 +5,7 @@ Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/
 
 ## Technical Stack
 - Vite
-- Nuxt 3
+- Vue 3 / Nuxt 3
 - Pinia
 - Vuetify
 - Supabase
