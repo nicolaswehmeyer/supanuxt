@@ -19,12 +19,7 @@ const authStore = useAuthStore()
       <AccountProfileAddress />
     </v-col>
     <v-col cols="6" offset="6">
-      <v-btn
-        block
-        @click="authStore.updateProfile()"
-      >
-        Save
-      </v-btn>
+      <v-btn block @click="authStore.updateProfile()"> Save </v-btn>
     </v-col>
   </v-row>
 </template>

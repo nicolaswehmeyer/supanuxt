@@ -2,5 +2,4 @@
 navigateTo('/home')
 </script>
 
-<template>
-</template>
+<template></template>

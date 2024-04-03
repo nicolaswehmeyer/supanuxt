@@ -6,7 +6,7 @@ const tab = ref(null)
 
 watchEffect(async () => {
   if (authStore.user) {
-    await navigateTo("/home")
+    await navigateTo('/home')
   }
 })
 </script>
@@ -47,7 +47,7 @@ watchEffect(async () => {
 
 <style scoped>
 #login-page {
-  background-image: url("/img/dubai1.jpg");
+  background-image: url('/img/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

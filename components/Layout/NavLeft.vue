@@ -8,9 +8,7 @@ const appStore = useAppStore()
 
 const { app } = storeToRefs(useAppStore())
 
-const links = [
-  { icon: 'mdi-home', title: 'Home', url: '/home' }
-]
+const links = [{ icon: 'mdi-home', title: 'Home', url: '/home' }]
 </script>
 
 <template>

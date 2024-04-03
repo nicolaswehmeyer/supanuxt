@@ -17,9 +17,9 @@ const inputIsInvalid = computed(() => {
 </script>
 
 <template>
-  <v-form class="Register" @submit.prevent="signUp">
+  <v-form class="Register" @submit.prevent="authStore.signUp">
     <v-card-text>
-      <v-card-title> Create Account </v-card-title>
+      <v-card-title class="text-center pb-6"> Create Account </v-card-title>
       <v-text-field
         v-model="email"
         name="email"

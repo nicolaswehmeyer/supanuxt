@@ -17,7 +17,9 @@ const inputIsInvalid = computed(() => {
 <template>
   <v-form class="AuthLocalLogin">
     <v-card-text>
-      <v-card-title class="text-center pb-6"> Supabase Mail Account </v-card-title>
+      <v-card-title class="text-center pb-6">
+        Supabase Mail Account
+      </v-card-title>
       <v-text-field
         v-model="email"
         name="email"
