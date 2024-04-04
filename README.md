@@ -8,9 +8,11 @@ SupaNuxt is based on Vue & Nuxt 3, Pinia, Vuetify, Supabase and Vite. SupaNuxt c
 Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.
 
 ## Features
-- UI based on Vuetify with light and dark mode
-- Global State using Pinia
-- Backed in Auth Proviers: Email, Github and Facebook
+- Complete UI based on Vuetify with light and dark mode
+- Loading indicators
+- Error and success indicators
+- Global state using Pinia
+- Security and auth proviers backed in: Email, Github and Facebook
 - Login Page
 - Registration Page
 - Example Welcome Page
