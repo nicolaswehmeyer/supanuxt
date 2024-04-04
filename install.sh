@@ -1,10 +1,24 @@
 #!/usr/bin/env sh
+check_node_version() {
+    required_version="18"
+    current_version=$(node -v | sed 's/v//' | awk -F '.' '{print $1}')
+    if (( $(echo "$current_version >= $required_version" | bc -l) )); then
+        echo "Node.js version $current_version is satisfying minimum Node version $required_version."
+    else
+        echo "Node.js version $current_version is below minimum Node $required_version. Aborting."
+        exit 1
+    fi
+}
+
 requirements_satisfied () {
   # Check if node and yarn are installed
   hash node 2>/dev/null || { echo >&2 "Node is required but not installed. Aborting."; exit 1; }
   hash yarn 2>/dev/null || { echo >&2 "Yarn is required but not installed. Aborting."; exit 1; }
+  check_node_version
   echo "All Installation requirements are met. Continuing."
 }
+
+
 
 clean_project_dir () {
   echo "Cleaning up project directory."
