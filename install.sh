@@ -77,6 +77,15 @@ setup_supabase() {
   yarn supabase db push
 }
 
+check_env_variables() {
+  read -p "Did you copy the .env.example file to .env and set your credentials (yes/no) " yn
+  case $yn in 
+    yes ) echo "Okay, proceeding to start the development server."; start_server;;
+    no ) echo "Please define your .env-file accordingly before starting the development server. Aborting."; exit 1;;
+    * ) echo "Error: Invalid response. Aborting."; exit 1;;
+  esac
+}
+
 start_server() {
   echo "--------------------------------------------------------------------------------"
   echo "--------------------------------------------------------------------------------"
@@ -91,6 +100,7 @@ main() {
   download_repository
   install_dependencies
   setup_supabase
+  check_env_variables
   start_server
 }
 
