@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-welcome_banner () {
+welcome_banner() {
   echo '
   /$$$$$$                                /$$   /$$                       /$$    
  /$$__  $$                              | $$$ | $$                      | $$    
@@ -18,33 +18,37 @@ welcome_banner () {
 }
 
 check_node_version() {
-    required_version="18"
-    current_version=$(node -v | sed 's/v//' | awk -F '.' '{print $1}')
-    if (( $(echo "$current_version >= $required_version" | bc -l) )); then
-        echo "Node.js version $current_version is satisfying minimum Node version $required_version."
-    else
-        echo "Node.js version $current_version is below minimum Node $required_version. Aborting."
-        exit 1
-    fi
+  required_version="18"
+  current_version=$(node -v | sed 's/v//' | awk -F '.' '{print $1}')
+  if ( ($(echo "$current_version >= $required_version" | bc -l))); then
+    echo "Node.js version $current_version is satisfying minimum Node version $required_version."
+  else
+    echo "Node.js version $current_version is below minimum Node $required_version. Aborting."
+    exit 1
+  fi
 }
 
-requirements_satisfied () {
+requirements_satisfied() {
   # Check if node and yarn are installed
-  hash node 2>/dev/null || { echo >&2 "Node is required but not installed. Aborting."; exit 1; }
-  hash yarn 2>/dev/null || { echo >&2 "Yarn is required but not installed. Aborting."; exit 1; }
+  hash node 2>/dev/null || {
+    echo >&2 "Node is required but not installed. Aborting."
+    exit 1
+  }
+  hash yarn 2>/dev/null || {
+    echo >&2 "Yarn is required but not installed. Aborting."
+    exit 1
+  }
   check_node_version
   echo "All Installation requirements are met. Continuing."
 }
 
-
-
-clean_project_dir () {
+clean_project_dir() {
   echo "Cleaning up project directory."
   rm -rf ./node_modules
   rm -rf ./*.lock
 }
 
-install_dependencies () {
+install_dependencies() {
   echo "\n"
   echo "Installing all required dependencies using Yarn:"
   echo "------------------------------------------------"
@@ -52,7 +56,7 @@ install_dependencies () {
   echo "------------------------------------------------"
 }
 
-setup_supabase () {
+setup_supabase() {
   echo "Connecting to your Supabase project."
   yarn supabase login
   echo "Open your browser and grab your Supabase project reference."
@@ -67,14 +71,14 @@ setup_supabase () {
   yarn supabase db push
 }
 
-start_server () {
+start_server() {
   echo "--------------------------------------------------------------------------------"
   echo "--------------------------------------------------------------------------------"
   echo "Starting development server now 🔥🚀"
   yarn run dev
 }
 
-main () {
+main() {
   welcome_banner
   requirements_satisfied
   clean_project_dir
