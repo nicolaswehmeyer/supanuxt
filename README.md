@@ -33,7 +33,7 @@ Initially make sure to setup your Supabase instance accordingly:
 **Now run the following commands in your terminal in your desired location:**
 ```bash
 # Clone the repository
-git clone https://github.com/nicolaswehmeyer/supanuxt
+git clone https://github.com/nicolaswehmeyer/supanuxt && cd supanuxt
 # Setup all dependencies and update your Supabase automatically
 bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/install.sh)
 ```
