@@ -1,9 +1,9 @@
-#  NuxtaBase - A Nuxt Supabase Starter Pack
-NuxtaBase is your go to starter pack to speef up your development time on your next full-stack web application.
+#  SupaNuxt - A Nuxt Supabase Starter Pack
+SupaNuxt is your go to starter pack to speef up your development time on your next full-stack web application.
 
-NuxtaBase is based on  Vue 3 & Nuxt 3, Pinia, Vuetify, Supabase and Vite. NuxtaBase provides you with all configurations required to get you started as fast as possible within your next project.
+SupaNuxt is based on  Vue 3 & Nuxt 3, Pinia, Vuetify, Supabase and Vite. SupaNuxt provides you with all configurations required to get you started as fast as possible within your next project.
 
-![NuxtaBase Header Image](image.png)
+![SupaNuxt Header Image](image.png)
 
 Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.
 
@@ -17,10 +17,10 @@ Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/
 # Screenshots
 
 ## Login
-![NuxtaBase Login Screen Image](login-screen.png)
+![SupaNuxt Login Screen Image](login-screen.png)
 
 ## Home
-![NuxtaBase Home Screen Image](home-screen.png)
+![SupaNuxt Home Screen Image](home-screen.png)
 
 # Installation & Setup
 Initially make sure to setup your Supabase instance accordingly:
@@ -68,10 +68,10 @@ values
 **Finally, make sure to install all required dependencies within your projects folder within your terminal:**
 ```bash
 # Clone the repository
-git clone https://github.com/nicolaswehmeyer/nuxtabase
+git clone https://github.com/nicolaswehmeyer/supanuxt
 
 # Change directories
-cd nuxtabase
+cd supanuxt
 
 # yarn
 yarn install
