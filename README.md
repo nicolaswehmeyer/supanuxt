@@ -23,7 +23,22 @@ Housekeeping: Please have a look at the [Nuxt 3 documentation](https://nuxt.com/
 ![SupaNuxt Home Screen Image](home-screen.png)
 
 # Automatic installation
-bash <(curl -Ls https://raw.githubusercontent.com/techpulsetoday/scripts/master/vim-bootstrap)
+Initially make sure to setup your Supabase instance accordingly:
+- Login to https://supabase.com/
+- Create a new Supabase project or use an existing project of your choice
+- If not done yet, setup your preferred auth providers (Email, Github, Facebook)
+- Rename the ```.env.example``` file to ```.env```
+- Insert your projects Supabase URL and API key into the ```.env``` file
+
+**Now run the following commands in your terminal in your desired location:**
+```bash
+# Clone the repository
+git clone https://github.com/nicolaswehmeyer/supanuxt
+# Setup all dependencies and update your Supabase automatically
+bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/install.sh)
+```
+
+Done.
 
 # Manual installation
 Initially make sure to setup your Supabase instance accordingly:
