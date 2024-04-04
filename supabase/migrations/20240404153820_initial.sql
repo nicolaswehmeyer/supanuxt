@@ -1,5 +1,5 @@
 create table public.profiles (
-  id uuid primary key references auth.users (id),
+  id uuid primary key references auth.uid(),
   created_at timestamp with time zone default now() not null,
   firstname text,
   lastname text,
