@@ -46,11 +46,17 @@ setup_supabase () {
   yarn supabase db push
 }
 
+start_server () {
+  echo "Starting development server now 🔥🚀"
+  yarn run dev
+}
+
 main () {
   requirements_satisfied
   clean_project_dir
   install_dependencies
   setup_supabase
+  start_server
 }
 
 main
