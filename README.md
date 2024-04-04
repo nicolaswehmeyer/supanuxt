@@ -36,7 +36,6 @@ Initially make sure to setup your Supabase instance accordingly:
 git clone https://github.com/nicolaswehmeyer/supanuxt && cd supanuxt
 # Setup all dependencies and update your Supabase automatically
 bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/install.sh)
-
 # Start the application
 yarn run dev
 ```
