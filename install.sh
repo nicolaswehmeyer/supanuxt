@@ -20,7 +20,7 @@ welcome_banner() {
 check_node_version() {
   required_version="18"
   current_version=$(node -v | sed 's/v//' | awk -F '.' '{print $1}')
-  if ( ($(echo "$current_version >= $required_version" | bc -l))); then
+  if [ $($current_version >= $required_version | bc -l) ]; then
     echo "Node.js version $current_version is satisfying minimum Node version $required_version."
   else
     echo "Node.js version $current_version is below minimum Node $required_version. Aborting."
@@ -40,6 +40,12 @@ requirements_satisfied() {
   }
   check_node_version
   echo "All Installation requirements are met. Continuing."
+}
+
+download_repository() {
+  echo "Downloading repository from Github"
+  git clone https://github.com/nicolaswehmeyer/supanuxt
+  cd supanuxt
 }
 
 clean_project_dir() {
@@ -82,6 +88,7 @@ main() {
   welcome_banner
   requirements_satisfied
   clean_project_dir
+  download_repository
   install_dependencies
   setup_supabase
   start_server
