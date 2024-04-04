@@ -29,7 +29,7 @@ setup_supabase () {
   echo "Make sure you got your database password ready (can be set in your Supabase project as well)."
   yarn supabase link --project-ref $project_reference_id
   echo "Updating your Supabase project and pushing changes to your online Supabase repository."
-  yarb supabase db push
+  yarn supabase db push
 }
 
 main () {
