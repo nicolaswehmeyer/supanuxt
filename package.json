@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/supabase": "^1.2.0"
+    "@nuxtjs/supabase": "^1.2.0",
+    "supabase": "^1.153.4"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
