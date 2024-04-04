@@ -46,12 +46,8 @@ Initially make sure to setup your Supabase instance accordingly:
 
 **Now run the following commands in your terminal in your desired location:**
 ```bash
-# Clone the repository
-git clone https://github.com/nicolaswehmeyer/supanuxt && cd supanuxt
-# Setup all dependencies and update your Supabase automatically
+# Clone repo, setup dependencies, prepare Supabase & run application in dev mode
 bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/install.sh)
-# Start the application
-yarn run dev
 ```
 
 Done.
