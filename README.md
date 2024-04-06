@@ -28,10 +28,6 @@ SupaNuxt is based on Vue & Nuxt 3, Pinia, Vuetify, Supabase and Vite. SupaNuxt c
 - Vuetify
 - Supabase
 
-# Screenshots
-![SupaNuxt Login Screen Image](login-screen.png)
-![SupaNuxt Home Screen Image](home-screen.png)
-
 # Automatic Installation
 **IMPORTANT:** The automatic installation was tested on macOS Sonoma only - specific instructions can behave differently on other Unix & Linux distributions. The script will download this repository to your current working directory store it in a new folder called "supanuxt. Please ensure you don't have a ```supanuxt``` folder in your current working directory, to avoid any overrides of your projects!
 
@@ -126,3 +122,7 @@ yarn build
 # yarn
 yarn preview
 ```
+
+# Screenshots
+![SupaNuxt Login Screen Image](login-screen.png)
+![SupaNuxt Home Screen Image](home-screen.png)
