@@ -57,7 +57,7 @@ clean_project_dir() {
 }
 
 install_dependencies() {
-  echo "\n"
+  echo -e "\n"
   echo "Installing all required dependencies using Yarn:"
   echo "------------------------------------------------"
   yarn install
