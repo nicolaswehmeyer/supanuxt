@@ -48,6 +48,9 @@ bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/
 
 That's it, you're done!🚀
 
+**Installation Demonstration*
+![SupaNuxt Installation Demonstration Video](installation.gif)
+
 # Manual installation
 **Initially make sure to setup your Supabase instance accordingly:**
 - Login to https://supabase.com/
