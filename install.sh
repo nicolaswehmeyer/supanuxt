@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 welcome_banner() {
+  echo "--------------------------------------------------------------------------------"
+  echo "--------------------------------------------------------------------------------"
   echo '
   /$$$$$$                                /$$   /$$                       /$$    
  /$$__  $$                              | $$$ | $$                      | $$    
@@ -69,28 +71,28 @@ setup_supabase() {
   echo "Hint: You'll find your Project Reference ID from the Supabase Project Dashboard under Project Settings -> General"
   read -p "Press Enter to navigate to https://supabase.com/dashboard/projects now. "
   python3 -m webbrowser https://supabase.com/dashboard/projects
-  echo "Paste your project url below (this is not your project URL): "
-  read project_reference_id
+  read -p "Paste your project url below (this is not your project URL): " project_reference_id
   echo "Make sure you got your database password ready (can be set in your Supabase project as well)."
   yarn supabase link --project-ref $project_reference_id
   echo "Updating your Supabase project and pushing changes to your online Supabase repository."
   yarn supabase db push
 }
 
-check_env_variables() {
-  read -p "Did you copy the .env.example file to .env and set your credentials (yes/no) " yn
-  case $yn in 
-    yes ) echo "Okay, proceeding to start the development server."; start_server;;
-    no ) echo "Please define your .env-file accordingly before starting the development server. Aborting."; exit 1;;
-    * ) echo "Error: Invalid response. Aborting."; exit 1;;
-  esac
+set_env_variables() {
+  echo "Next, we will set up then .env file accordingly."
+  cp ./.env.example ./.env
+  read -p "Copy & paste your Supabase Project URL (Project Settings -> API -> URL): " project_url
+  read -p "Copy & paste your Supabase Project API-KEY (Project Settings -> API -> Project API keys): " project_api_key
+  sed -i '' -e "s#https://example.supabase.co#${project_url}#g" ./.env
+  sed -i '' -e "s#Your.Supabase.API.KEY.Goes.Here#${project_api_key}#g" ./.env
+  echo "Updated .env file."
 }
 
 start_server() {
   echo "--------------------------------------------------------------------------------"
   echo "--------------------------------------------------------------------------------"
   echo "Starting development server now 🔥🚀"
-  yarn run dev
+  yarn dev
 }
 
 main() {
@@ -100,7 +102,7 @@ main() {
   download_repository
   install_dependencies
   setup_supabase
-  check_env_variables
+  set_env_variables
   start_server
 }
 
