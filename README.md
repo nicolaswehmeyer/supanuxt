@@ -1,11 +1,11 @@
 #  SupaNuxt - A Nuxt Supabase Starter Pack
 SupaNuxt is your go to starter pack to speed up your development time on your next full-stack web application.
 
-SupaNuxt is based on Vue & Nuxt 3, Pinia, Vuetify, Supabase and Vite. SupaNuxt comes with authentication backed in and provides you with all configurations required to get you started as fast as possible within your next project.
+SupaNuxt is based on Vue & Nuxt 3, Pinia, Vuetify, Supabase and Vite. SupaNuxt is shipped with authentication already backed in and provides you with all configuration necessary to get you started as fast as possible with your next full-stack software coding project.
 
 ![SupaNuxt Header Image](image.png)
 
-*Please have a look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.*
+*Please have a look at the official documentation of each framework to ensure you follow the most recent best practices on Vue, Nuxt, Pinia, Supabase and Vuetify.*
 
 ## Features
 - Complete UI based on Vuetify with light and dark mode
