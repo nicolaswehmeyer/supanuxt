@@ -48,7 +48,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/nicolaswehmeyer/supanuxt/main/
 
 That's it, you're done!🚀
 
-**Installation Demonstration*
+**Installation Demonstration Video**
 ![SupaNuxt Installation Demonstration Video](installation.gif)
 
 # Manual installation
