@@ -61,7 +61,6 @@ Within Supabase, create a new ```public.profiles``` table, enable Row Level Secu
 ```sql
 -- Create a new profiles table to store users profile details
 create table public.profiles (
-  id uuid primary key references auth.users (id)create table public.profiles (
   id uuid primary key references auth.users (id) default auth.uid(),
   created_at timestamp with time zone default now() not null,
   firstname text,
