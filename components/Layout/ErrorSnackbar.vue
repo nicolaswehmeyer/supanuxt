@@ -5,8 +5,8 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <v-snackbar v-model="appStore.error">
-    {{ appStore.errorMessage }}
+  <v-snackbar v-model="appStore.app.error">
+    {{ appStore.app.errorMessage }}
     <template v-slot:actions>
       <v-btn color="red" variant="text" @click="appStore.unsetError">
         CLOSE

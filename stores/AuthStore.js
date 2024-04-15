@@ -26,9 +26,10 @@ export const useAuthStore = defineStore({
         this.userProfile = data
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
         this.appStore.setLoader(false)
+        throw error
       }
+      this.appStore.setLoader(false)
     },
     async signUp(email, password) {
       try {
@@ -41,10 +42,11 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
-        this.appStore.setSuccess('Registration was successful. Please check your email to confirm your account.')
         this.appStore.setLoader(false)
+        throw error
       }
+      this.appStore.setSuccess('Registration was successful. Please check your email to confirm your account.')
+      this.appStore.setLoader(false)
     },
     async signInWithPassword(email, password) {
       try {
@@ -60,10 +62,11 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
         this.appStore.setLoader(false)
-        this.appStore.setSuccess('You were successfully logged in.')
+        throw error
       }
+      this.appStore.setLoader(false)
+      this.appStore.setSuccess('You were successfully logged in.')
     },
     async signInWithOAuth(provider) {
       try {
@@ -78,10 +81,11 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
         this.appStore.setLoader(false)
-        this.appStore.setSuccess('You were successfully logged in.')
+        throw error
       }
+      this.appStore.setLoader(false)
+      this.appStore.setSuccess('You were successfully logged in.')
     },
     async updateProfile() {
       try {
@@ -101,10 +105,11 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
         this.appStore.setLoader(false)
-        this.appStore.setSuccess('Your account data has been updated successfully.')
+        throw error
       }
+      this.appStore.setLoader(false)
+      this.appStore.setSuccess('Your account data has been updated successfully.')
     },
     async updatePhoto(images) {
       try {
@@ -138,10 +143,11 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
         this.appStore.setLoader(false)
-        this.appStore.setSuccess('Your profile picture has been updated successfully.')
+        throw error
       }
+      this.appStore.setLoader(false)
+      this.appStore.setSuccess('Your profile picture has been updated successfully.')
     },
     async updateEmail(email) {
       try {
@@ -153,9 +159,10 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
-        this.handleSignOut()
+        this.appStore.setLoader(false)
+        throw error
       }
+      this.handleSignOut()
     },
     async updatePassword(password) {
       try {
@@ -167,9 +174,10 @@ export const useAuthStore = defineStore({
         if (error) throw error
       } catch (error) {
         this.appStore.setError(error)
-      } finally {
-        this.handleSignOut()
+        this.appStore.setLoader(false)
+        throw error
       }
+      this.handleSignOut()
     },
     async handleSignOut() {
       try {
@@ -178,13 +186,13 @@ export const useAuthStore = defineStore({
           .signOut()
         if (error) throw error
       } catch (error) {
-        this.appStore.setLoader(false)
         this.appStore.setError(error)
-      } finally {
-        setTimeout(navigateTo("/login"), 500)
         this.appStore.setLoader(false)
-        this.appStore.setSuccess('You were successfully logged out.')
+        throw error
       }
+      setTimeout(navigateTo("/login"), 500)
+      this.appStore.setLoader(false)
+      this.appStore.setSuccess('You were successfully logged out.')
     }
   }
 })
